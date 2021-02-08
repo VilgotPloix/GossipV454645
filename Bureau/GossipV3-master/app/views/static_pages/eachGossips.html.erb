@@ -1,0 +1,13 @@
+<header>
+		<div class="contact"><%= link_to "contact", '/contact' %></div>
+		<div class="contact"><%= link_to "home", '/' %></div>
+		</header>
+
+
+<h1>Bienvenue  sur le gossip n° <%= @gossip.id %></h1>
+
+<div id="mmm">
+<p>Auteur: <%= @gossip.user.first_name %></p>
+<p>Titre : <%= @gossip.title %></p>
+<p>Le potiiiin : <%= @gossip.content %></p>
+</div>
