@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
-  
-	get '/', to: "static_pages#home"
-
-
-	get '/gossips/:id', to: "static_pages#eachGossips"
-
-	get '/team', to: "static_pages#team"
-
-	get '/contact', to: "static_pages#contact"
-
+	#get "/", to 'user#new'
+	root 'users#new'
+	get '/contact', to: 'static#contact'
+	get '/team', to: 'static#team'
+	resources :gossips
+	resources :sessions, only: [:new, :create, :destroy]
+	resources :users, only: [:new, :create, :destroy]
 end

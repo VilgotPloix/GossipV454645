@@ -2,7 +2,8 @@ body
 {
 	margin: 0px;
 
-background: radial-gradient(circle, rgba(255,0,112,1) 0%, rgba(0,117,255,1) 100%);
+
+background: linear-gradient(90deg, rgba(235,136,10,1) 3%, rgba(0,212,255,1) 100%);
 }
 
 header
@@ -38,7 +39,8 @@ p
 
 #cards
 {
-	margin: 50px;
+	margin: auto;
+	margin-top: 50px;
 	border: 1px solid black;
 	border-radius: 15px;
 	width: 500px;
@@ -77,4 +79,10 @@ p
 	margin: auto;
 	background-color: orange;
 	text-align: center;
+}
+
+form
+{
+	width: 300px;
+	margin: auto;
 }

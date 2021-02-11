@@ -40,7 +40,8 @@ end
     description: Faker::Lorem.sentence,
     email: Faker::Internet.email,
     age: Faker::Number.between(7, 77),
-    city_id: City.all.sample.id
+    city_id: City.all.sample.id,
+    password: Faker::Name.last_name
   )
 end
 

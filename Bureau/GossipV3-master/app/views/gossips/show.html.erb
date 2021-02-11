@@ -1,0 +1,15 @@
+<header>
+	<%= link_to "créer un potin", new_gossip_path %>
+	<%= link_to "team", team_path %>
+	<%= link_to "contact", contact_path %>
+	<%= link_to "home", root_path %>
+	<%= link_to 'déconnection', new_session_path %>
+</header>
+
+
+<p>auteur du potin : <%= @gossip.user.id %></p>
+<p>titre du potin : <%= @gossip.title %></p>
+<p>contenu du potin : <%= @gossip.content %></p>
+
+<%= link_to "éditer le potin", edit_gossip_path(@gossip) %>
+<%= link_to "supprimer le potin", gossip_path(@gossip.id) %>

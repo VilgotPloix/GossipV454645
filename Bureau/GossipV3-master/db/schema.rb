@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_08_133848) do
+ActiveRecord::Schema.define(version: 2021_02_11_090235) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,13 @@ ActiveRecord::Schema.define(version: 2021_02_08_133848) do
     t.index ["sender_id"], name: "index_private_messages_on_sender_id"
   end
 
+  create_table "sessions", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tag_gossips", force: :cascade do |t|
     t.bigint "tag_id"
     t.bigint "gossip_id"
@@ -58,10 +65,12 @@ ActiveRecord::Schema.define(version: 2021_02_08_133848) do
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
+    t.string "username"
     t.string "last_name"
     t.text "description"
     t.string "email"
     t.integer "age"
+    t.string "password_digest"
     t.bigint "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -1,0 +1,19 @@
+<header>
+	<%= link_to "créer un potin", new_gossip_path %>
+	<%= link_to "team", team_path %>
+	<%= link_to "contact", contact_path %>
+	<%= link_to 'déconnection', new_session_path %>
+</header>
+<h1>Bienvenue <%= current_user.email %> !</h1>
+
+
+	 <%@gossips.each_with_index do |gossip, index| %> <!-- <% %> pour executer du ruby dans le html -->
+		 <div id="cards">  
+		 	<p>
+		      <div id="author"><%= gossip.title %></div> <!-- <%= %> equivaut au puts de Ruby -->
+		      <div id="content"><%= gossip.content %></div>
+		    </p>
+			    <div><a href="/gossips/<%=index + 1%>">Voir le potin <%= index %></a></div>
+		    <%end%>
+		</div>
+
